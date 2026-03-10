@@ -1,0 +1,3 @@
+- create controller
+- create html file
+- run application
