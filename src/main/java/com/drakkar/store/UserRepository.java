@@ -3,4 +3,6 @@ package com.drakkar.store;
 public interface UserRepository {
     void save(User user);
     User findByEmail(String email);
+
+    void registerUser(User drakkar);
 }

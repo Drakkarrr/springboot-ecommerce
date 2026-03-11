@@ -10,8 +10,8 @@ public class NotificationManager {
         this.notificationService = notificationService;
     }
 
-    public void sendNotification(String message) {
+    public void sendNotification(String message, String recipientEmail) {
 
-        notificationService.send(message);
+        notificationService.send(message, recipientEmail);
     }
 }

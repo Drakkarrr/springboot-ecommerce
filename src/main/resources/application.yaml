@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: store
+stripe:
+  apiURL:https://api.stripe.com/v1
+email:
+  host:smtp.gmail.com
+  port:587
