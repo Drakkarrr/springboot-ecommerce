@@ -1,8 +1,13 @@
 package com.store.store;
 
 public class OrderService {
+   private PaymentService paymentService;
+
+   public OrderService(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+
     public void placeOrder() {
-        var PaymentService = new StripePaymentService();
-        PaymentService.processPayment(100.0);
+        paymentService.processPayment(100.0);
     }
 }
