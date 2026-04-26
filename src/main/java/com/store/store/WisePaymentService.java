@@ -2,7 +2,7 @@ package com.store.store;
 
 import org.springframework.stereotype.Service;
 
-@Service
+@Service( "wise")
 public class WisePaymentService implements PaymentService{
     @Override
     public void processPayment(double amount) {
