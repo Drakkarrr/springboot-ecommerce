@@ -18,7 +18,7 @@ public class StripePaymentService implements PaymentService {
     @Value("${stripe.timeout:3000}")
     private int timeout;
 
-    @Value("${stripe.supported.currencies}")
+    @Value("${stripe.currencies}")
     private List<String> supportedCurrencies;
 
     @Override
