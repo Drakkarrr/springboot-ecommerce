@@ -1,12 +1,13 @@
 package com.store.store.controllers;
 
+import com.store.store.entities.Message;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class MessageController {
     @RequestMapping("/message")
-    public String getMessage() {
-        return "Hello World!";
+    public Message getMessage() {
+        return new Message("Hello World!");
     }
 }
