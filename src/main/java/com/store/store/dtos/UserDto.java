@@ -1,12 +1,17 @@
 package com.store.store.dtos;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
+import java.time.LocalDateTime;
+
+@Data
+@Builder
+@NoArgsConstructor
 @AllArgsConstructor
-@Getter
 public class UserDto {
     private Long id;
     private String name;
     private String email;
+    private LocalDateTime createdAt;
 }
