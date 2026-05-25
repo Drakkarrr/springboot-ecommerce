@@ -22,12 +22,12 @@ public class UserController {
 
     @GetMapping
     public Iterable<UserDto> getAllUsers(
-            @RequestParam String sort) {
+            @RequestParam(required = false, defaultValue = "", name = "sortedby") String sortedby) {
 
-        if (!Set.of("name", "email").contains(sort))
-            sort = "name";
+        if (!Set.of("name", "email").contains(sortedby))
+            sortedby = "name";
 
-        return userRepository.findAll(Sort.by(sort))
+        return userRepository.findAll(Sort.by(sortedby))
                              .stream()
                              .map(userMapper::toDto)
                              .toList();
