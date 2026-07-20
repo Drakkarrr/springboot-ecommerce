@@ -5,6 +5,9 @@ spring:
     url: jdbc:mysql://localhost:3306/store?createDatabaseIfNotExist=true
     username: root
     password: admin123
+  jpa:
+    hibernate:
+      ddl-auto: validate
 stripe:
   apiUrl: https://api.stripe.com/v1
   enabled: true
