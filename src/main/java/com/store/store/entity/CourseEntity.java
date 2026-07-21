@@ -7,21 +7,18 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "incidents")
-public class IncidentsEntity {
+@Table(name = "courses")
+public class CourseEntity {
     @Id
     @GeneratedValue
     private Long id;
 
     @Column
-    private String number;
+    private String courseName;
 
     @Column
-    private String requester;
+    private String courseCode;
 
     @Column
-    private String issue;
-
-    @Column
-    private String priority;
+    private String courseDescription;
 }
