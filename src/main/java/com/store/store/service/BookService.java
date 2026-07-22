@@ -1,6 +1,7 @@
 package com.store.store.service;
 
 import com.store.store.dto.CreateBookDto;
+import com.store.store.dto.UpdateBookDto;
 import com.store.store.entity.BookEntity;
 import com.store.store.repository.BookRepository;
 import lombok.AllArgsConstructor;
@@ -14,11 +15,7 @@ public class BookService {
     private final BookRepository bookRepository;
 
     public BookEntity createBook(CreateBookDto createBookDto) {
-        BookEntity bookEntity = new BookEntity();
-        bookEntity.setTitle(createBookDto.getTitle());
-        bookEntity.setAuthor(createBookDto.getAuthor());
-        bookEntity.setIsbn(createBookDto.getIsbn());
-        return bookRepository.save(bookEntity);
+        return null;
     }
 
 
@@ -28,6 +25,17 @@ public class BookService {
     }
 
     public List<BookEntity> getBooks() {
-        return bookRepository.findAll();
+        return null;
+    }
+
+    public static BookEntity updateBook(Long id, UpdateBookDto bookRequesDto) {
+        BookEntity bookEntity = bookRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Book Not Found"));
+
+        return bookRepository.save(bookEntity);
+    }
+
+    public void deleteBookById(Long id) {
+        bookRepository.deleteById(id);
     }
 }

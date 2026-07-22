@@ -1,6 +1,7 @@
 package com.store.store.controller;
 
 import com.store.store.dto.CreateBookDto;
+import com.store.store.dto.UpdateBookDto;
 import com.store.store.entity.BookEntity;
 import com.store.store.repository.BookRepository;
 import com.store.store.service.BookService;
@@ -28,5 +29,15 @@ public class BookController {
     @GetMapping
     public List<BookEntity> getBooks() {
         return bookService.getBooks();
+    }
+
+    @PutMapping("/{id}")
+    public BookEntity updateBook(@PathVariable Long id, @RequestBody UpdateBookDto bookRequesDto) {
+        return BookService.updateBook(id, bookRequesDto);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteBook(@PathVariable Long id) {
+        bookService.deleteBookById(id);
     }
 }
