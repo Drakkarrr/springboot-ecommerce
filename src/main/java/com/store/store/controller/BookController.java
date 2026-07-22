@@ -11,20 +11,22 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
+@RequestMapping("/books")
 public class BookController {
     private final BookService bookService;
 
-    @PostMapping("/books")
+    @PostMapping
     public BookEntity createBook(@RequestBody CreateBookDto createBookDto) {
         return bookService.createBook(createBookDto);
     }
 
-    @GetMapping("/books/{id}")
+    @GetMapping("/{id}")
     public BookEntity getBook(@PathVariable Long id) {
         return bookService.getBook(id);
     }
 
-    public List<BookEntity> getAllBooks() {
-        return null;
+    @GetMapping
+    public List<BookEntity> getBooks() {
+        return bookService.getBooks();
     }
 }
